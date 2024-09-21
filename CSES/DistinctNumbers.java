@@ -2,26 +2,20 @@ package CSES;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
-import java.util.Comparator;
+import java.util.HashSet;
 import java.util.StringTokenizer;
 
-public class CollectingNumbers {
-    
-    public static void main(String[] args){
+public class DistinctNumbers {
+    public static void main(String[] arg){
         FastReader fastReader = new FastReader();
         int n = fastReader.nextInt();
-        int[] arr = new int[n + 1];
-        for(int i=1;i<=n;i++){
-            arr[fastReader.nextInt()] = i;
+        HashSet<Integer> hashSet = new HashSet<>();
+        for(int i=0;i<n;i++){
+            hashSet.add(fastReader.nextInt());
         }
-        int round = 1;
-        for(int i=1;i<n;i++){
-            if(arr[i] > arr[i+1]) round++;
-        }
-        System.out.println(round);
+        System.out.println(hashSet.size());
     }
-    static class FastReader { 
+     static class FastReader { 
         BufferedReader br; 
         StringTokenizer st; 
   
